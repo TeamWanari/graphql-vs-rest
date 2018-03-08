@@ -1,0 +1,33 @@
+schema {
+    query: Query
+}
+
+type Query {
+    printers(id: Int, ownerId: Int): [Printer]!
+    users(id: Int): [User]!
+}
+
+type Printer {
+    id: Int!
+    owner: User!
+    name: String!
+    serialNumber: String!
+}
+
+type User {
+    id: Int!
+    login: String!
+    printers: [Printer]!
+    roles: [Role]!
+}
+
+type Role {
+    key: String!
+    users: [User]!
+    privileges: [Privilege]!
+}
+
+type Privilege {
+    key: String!
+    roles: [Role]!
+}

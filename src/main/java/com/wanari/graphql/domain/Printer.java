@@ -3,7 +3,7 @@ package com.wanari.graphql.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Printer {
@@ -11,7 +11,7 @@ public class Printer {
     @Id
     public Long id;
 
-    @OneToOne
+    @ManyToOne
     public User owner;
 
     @Column

@@ -1,0 +1,21 @@
+schema {
+    query: Query
+}
+
+type Query {
+    #    allRole: [GraphqlRoleDto]!
+    #    allUser: [GraphqlUserDto]!
+    printers(thaParam: Int): [Printer]!
+}
+
+type Printer {
+    id: Int!
+    user: User!
+    name: String!
+}
+
+type User {
+    id: Int
+    login: String
+    #    printers: [Printer]
+}

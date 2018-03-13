@@ -1,0 +1,70 @@
+{
+	"id": "a346a43d-9488-255d-988e-a1798896158a",
+	"name": "GraphQL",
+	"description": "",
+	"order": [
+		"412a8487-5c57-e2c2-6bc6-57b001b00a96",
+		"811a7983-606e-36d0-ae87-1b61ba85eaa1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1520859338973,
+	"owner": "2144278",
+	"public": false,
+	"requests": [
+		{
+			"id": "412a8487-5c57-e2c2-6bc6-57b001b00a96",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/graphql",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a346a43d-9488-255d-988e-a1798896158a",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8080/graphql",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1520859344437,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n\t\"query\":\"{printers {name user{id login}}}\"\r\n}"
+		},
+		{
+			"id": "811a7983-606e-36d0-ae87-1b61ba85eaa1",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/user",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a346a43d-9488-255d-988e-a1798896158a",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8080/user",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1520859356836,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

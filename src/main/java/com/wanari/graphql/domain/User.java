@@ -1,6 +1,7 @@
 package com.wanari.graphql.domain;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,7 +20,7 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_key"))
     public Set<Role> roles;
 
-    @OneToOne(mappedBy = "owner")
-    public Printer printer;
+    @OneToMany(mappedBy = "owner")
+    public List<Printer> printer;
 
 }

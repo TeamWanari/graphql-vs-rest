@@ -18,4 +18,12 @@ public class UserService {
     public List<User> findAllForRest() {
         return userRepository.findAllForRest();
     }
+
+    public List<User> findAllForGraphql() {
+        return userRepository.findAll();
+    }
+
+    public User findByUserId(Long userId) {
+        return userRepository.findOne(userId);
+    }
 }

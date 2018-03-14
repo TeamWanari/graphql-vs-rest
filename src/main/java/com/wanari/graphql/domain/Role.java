@@ -9,10 +9,10 @@ public class Role {
     @Id
     public String key;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", fetch=FetchType.LAZY)
     public Set<User> users;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name = "role_privilege", joinColumns = @JoinColumn(name = "role_key"), inverseJoinColumns = @JoinColumn(name = "privilege_key"))
     public Set<Privilege> privileges;
 

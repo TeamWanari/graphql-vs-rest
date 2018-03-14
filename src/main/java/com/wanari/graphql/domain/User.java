@@ -16,11 +16,11 @@ public class User {
     @Column
     public String password;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_key"))
     public Set<Role> roles;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch=FetchType.LAZY)
     public List<Printer> printer;
 
 }

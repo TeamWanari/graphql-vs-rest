@@ -31,7 +31,7 @@ public class UserController {
     @RequestMapping(
             value = "rest_test",
             method = RequestMethod.GET)
-    public List<RestUserDto> getUsersWithSelectedFields(@RequestParam List<String> fields, @RequestParam Map<String,String> allRequestParams) {
-        return userService.findUsersWithSelectedFields(fields, allRequestParams);
+    public List<RestUserDto> getUsersWithSelectedFields(@RequestParam List<String> fields, @RequestParam(required=false) String sortBy, @RequestParam(required=false) String sortOrder, @RequestParam Map<String,String> allRequestParams) {
+        return userService.findUsersWithSelectedFields(fields, sortBy, sortOrder, allRequestParams);
     }
 }

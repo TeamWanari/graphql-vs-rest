@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, QueryDslPredicateExecutor<User> {
 
-    @Query(" SELECT user from User user " + //TODO multi returnöl ez a buzi
+    @Query(" SELECT DISTINCT user from User user " + //TODO multi returnöl ez a buzi
         " INNER JOIN FETCH user.roles role " +
         " INNER JOIN FETCH role.privileges pivi " +
         " INNER JOIN FETCH user.printer prin ")

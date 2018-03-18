@@ -1,4 +1,4 @@
-package com.wanari.graphql.domain_querydsl;
+package com.wanari.graphql.selective_rest.domain_querydsl;
 
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.PathMetadata;

@@ -1,0 +1,19 @@
+PiciMaci stuff:
+Szar az Oracle-es doksi!
+https://stackoverflow.com/questions/33773474/unable-to-access-metamodel-entity-attributes
+A model és a static metamodel egy package-ben kell, hogy legyenek
+https://stackoverflow.com/questions/3854687/jpa-hibernate-static-metamodel-attributes-not-populated-nullpointerexception
+
+
+Süxy stuff:
+http://www.baeldung.com/spring-graphql
+hiányzik a @Component
+AuthorDto hol a geciben van?
+
+https://github.com/graphql-java/graphql-spring-boot/issues/61
+https://www.pluralsight.com/guides/java-and-j2ee/building-a-graphql-server-with-spring-boot
+2.0 szar
+hiányzik a @Component
+
+https://blog.pusher.com/writing-graphql-service-using-kotlin-spring-boot/
+ezen végre van @Component

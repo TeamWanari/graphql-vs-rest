@@ -1,18 +1,18 @@
 package com.wanari.graphql.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+//@Cacheable
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Privilege {
 
     @Id
     public String key;
 
-    @ManyToMany(mappedBy = "privileges", fetch= FetchType.LAZY)
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(name = "role_privilege", joinColumns = @JoinColumn(name = "privilege_key"), inverseJoinColumns = @JoinColumn(name = "role_key"))
     public Set<Role> roles;
 
 }

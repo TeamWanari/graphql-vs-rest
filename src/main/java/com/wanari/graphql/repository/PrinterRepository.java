@@ -9,7 +9,9 @@ import java.util.List;
 
 @Repository
 public interface PrinterRepository extends JpaRepository<Printer, Long> {
-    @Query(" SELECT p from Printer p " +
-        " INNER JOIN FETCH p.owner ")
+    @Query(" SELECT DISTINCT p from Printer p " +
+        " INNER JOIN FETCH p.owner o" +
+        " INNER JOIN FETCH o.roles r" +
+        " INNER JOIN FETCH r.privileges")
     List<Printer> findForGraphql();
 }

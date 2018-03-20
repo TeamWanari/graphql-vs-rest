@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+//@Cacheable
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Role {
 
     @Id

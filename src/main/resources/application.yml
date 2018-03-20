@@ -13,3 +13,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        cache:
+          user_second_level: true
+          use_query_cache: true
+          region:
+            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory

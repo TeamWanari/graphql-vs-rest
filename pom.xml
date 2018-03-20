@@ -27,6 +27,8 @@
         <graphql-spring-boot-starter-version>3.6.0</graphql-spring-boot-starter-version>
         <graphql-java-tools-version>3.2.0</graphql-java-tools-version>
         <querydsl.version>4.1.4</querydsl.version>
+        <hibernate.cache.use_second_level_cache value="true"/>
+        <hibernate.cache.region.factory_class>org.hibernate.cache.ehcache.EhCacheRegionFactory"</hibernate.cache.region.factory_class>
     </properties>
 
     <dependencies>
@@ -73,6 +75,11 @@
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
             <version>4.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>5.2.10.Final</version>
         </dependency>
     </dependencies>
 

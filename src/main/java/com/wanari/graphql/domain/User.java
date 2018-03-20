@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+//@Cacheable
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class User {
 
     @Id

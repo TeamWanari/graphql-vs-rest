@@ -15,7 +15,7 @@ public class GraphqlRole {
 
     public static GraphqlRole from(Role role) {
         GraphqlRole dto = new GraphqlRole();
-        dto.key = role.key;
+        dto.key = role.keyName;
 //        TODO cannot do this because of 'org.hibernate.LazyInitializationException'.
 //        dto.privileges = GraphqlPrivilege.from(role.privileges);
         return dto;

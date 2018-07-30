@@ -24,5 +24,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
         " WHERE user.id = :id")
     User findOneJoined(@Param("id") Long id);
 
-    List<User> findByRolesKey(String key);
+    List<User> findByRolesKeyName(String key);
 }

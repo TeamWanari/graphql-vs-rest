@@ -11,7 +11,7 @@ public class RestRoleDto {
 
     public static RestRoleDto from(Role role) {
         RestRoleDto dto = new RestRoleDto();
-        dto.key = role.key;
+        dto.key = role.keyName;
         dto.privileges = role.privileges.stream().map(RestPrivilegeDto::from).collect(Collectors.toList());
         return dto;
     }

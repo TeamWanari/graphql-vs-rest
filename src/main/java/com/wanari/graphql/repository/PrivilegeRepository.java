@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PrivilegeRepository extends JpaRepository<Privilege, Long> {
-    List<Privilege> findByRolesKey(String key);
+    List<Privilege> findByRolesKeyName(String key);
 }

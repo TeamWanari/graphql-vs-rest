@@ -7,7 +7,7 @@ public class RestPrivilegeDto {
 
     public static RestPrivilegeDto from(Privilege privilege) {
         RestPrivilegeDto dto = new RestPrivilegeDto();
-        dto.key = privilege.key;
+        dto.key = privilege.keyName;
         return dto;
     }
 }

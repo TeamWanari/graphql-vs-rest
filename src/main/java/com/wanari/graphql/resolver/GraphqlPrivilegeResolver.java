@@ -16,7 +16,7 @@ public class GraphqlPrivilegeResolver implements GraphQLResolver<GraphqlPrivileg
     }
 
     public List<GraphqlRole> getRoles(GraphqlPrivilege privilege) {
-        return GraphqlRole.from(roleRepository.findByPrivilegesKey(privilege.key));
+        return GraphqlRole.from(roleRepository.findByPrivilegesKeyName(privilege.key));
     }
 
 }

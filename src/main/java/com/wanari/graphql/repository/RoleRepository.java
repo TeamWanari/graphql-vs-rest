@@ -11,5 +11,5 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
 
     List<Role> findByUsersId(Long id);
 
-    List<Role> findByPrivilegesKey(String key);
+    List<Role> findByPrivilegesKeyName(String key);
 }

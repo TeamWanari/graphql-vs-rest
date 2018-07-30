@@ -9,7 +9,7 @@ import java.util.Set;
 public class Privilege {
 
     @Id
-    public String key;
+    public String keyName;
 
     @ManyToMany(mappedBy = "privileges")
     public Set<Role> roles;

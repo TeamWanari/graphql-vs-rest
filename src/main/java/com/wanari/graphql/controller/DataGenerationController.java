@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -41,17 +42,9 @@ public class DataGenerationController {
 
     @Transactional
     public void generateData(DbGenerationData data) {
-        deleteAllRepo();
         initTables(data);
         joinUsersAndRoles(data);
         joinRolesAndPrivileges(data);
-    }
-
-    private void deleteAllRepo() {
-        printerRepository.deleteAll();
-        userRepository.deleteAll();
-        roleRepository.deleteAll();
-        privilegeRepository.deleteAll();
     }
 
     private void joinRolesAndPrivileges(DbGenerationData data) {
@@ -64,8 +57,8 @@ public class DataGenerationController {
                 int generated = generateRand(0, privileges.size() - 1);
                 role.privileges.add(privileges.get(generated));
             }
-            roleRepository.save(role);
         }
+        roleRepository.save(roles);
     }
 
     private void joinUsersAndRoles(DbGenerationData data) {
@@ -77,17 +70,20 @@ public class DataGenerationController {
                 int generated = generateRand(0, roles.size() - 1);
                 user.roles.add(roles.get(generated));
             }
-            userRepository.save(user);
         }
+        userRepository.save(users);
     }
 
     public void initTables(DbGenerationData data) {
+
+        List<User> users = new ArrayList<>();
+        List<Printer> printers = new ArrayList<>();
 
         for(int i = 0; i < data.userNumber; i++) {
             User user = new User();
             user.login = "login" + i;
             user.password = "super_secret_password" + i;
-            userRepository.save(user);
+            users.add(user);
 
             int numberOPrinters = generateRand(data.minPrintersByUser, data.maxPrintersByUser);
             for(int j = 0; j < numberOPrinters; j++) {
@@ -95,9 +91,12 @@ public class DataGenerationController {
                 printer.name = "printer_name" + i + "_" + j;
                 printer.serialNumber = UUID.randomUUID().toString();
                 printer.owner = user;
-                printerRepository.save(printer);
+                printers.add(printer);
             }
         }
+
+        userRepository.save(users);
+        printerRepository.save(printers);
 
         for(int i = 0; i < data.privilegeNumber; i++) {
             Privilege privilege = new Privilege();

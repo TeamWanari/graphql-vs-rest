@@ -1,266 +1,515 @@
 {
-  "info": {
-    "_postman_id": "8600d8ed-4240-4b67-a019-66269e410b1b",
-    "name": "GraphQL",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "GraphQL / Get printers",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"query\":\"{printers(id:2) {id name owner{id login printers{id} roles{key privileges{key}}}}}\"\r\n}"
-        },
-        "url": {
-          "raw": "localhost:8080/graphql",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "graphql"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "GraphQL / Get users",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"query\":\"{users {id login printers{id name serialNumber owner{id}} roles {key privileges{ key }}}}\"\r\n}"
-        },
-        "url": {
-          "raw": "localhost:8080/graphql",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "graphql"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get users",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/user",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "user"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get users by id",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/user/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "user",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers by id",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers by owner id",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer/owner/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer",
-            "owner",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get users joined",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/user/joined",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "user",
-            "joined"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get users by id joined",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/user/joined/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "user",
-            "joined",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers joined",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer/joined",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer",
-            "joined"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers by id joined",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer/joined/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer",
-            "joined",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "REST / Get printers by owner id joined",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": {
-          "raw": "localhost:8080/printer/joined/owner/1",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "printer",
-            "joined",
-            "owner",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "8600d8ed-4240-4b67-a019-66269e410b1b",
+		"name": "GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GraphQL / Get printers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\":\"{printers(id:2) {id name owner{id login printers{id} roles{key privileges{key}}}}}\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL / Get users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\":\"{users {id login printers{id name serialNumber owner{id}} roles {key privileges{ key }}}}\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get users by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers by owner id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/owner/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"owner",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get users joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user/joined",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"joined"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get users by id joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user/joined/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"joined",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/joined",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"joined"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers by id joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/joined/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"joined",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST / Get printers by owner id joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/joined/owner/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"joined",
+						"owner",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Filter / Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user/filtered?fields=details",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"filtered"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "details"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Filter / Get users joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/user/filtered/joined?fields=details",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"filtered",
+						"joined"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "details"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Filter / Get printers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/filtered?fields=details&ownerId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"filtered"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "details"
+						},
+						{
+							"key": "ownerId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Filter / Get printers joined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/printer/filtered/joined?fields=details&ownerId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"filtered",
+						"joined"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "details"
+						},
+						{
+							"key": "ownerId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DB seed / 100",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userNumber\":100,\n\t\"roleNumber\":50,\n\t\"privilegeNumber\":15,\n\t\"minPrintersByUser\":1,\n\t\"maxPrintersByUser\":10,\n\t\"minRolesByUser\":1,\n\t\"maxRolesByUser\":10,\n\t\"minPrivilegeByRole\":1,\n\t\"maxPrivilegeByRole\":10\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DB seed / 1 000",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userNumber\":1000,\n\t\"roleNumber\":25,\n\t\"privilegeNumber\":15,\n\t\"minPrintersByUser\":1,\n\t\"maxPrintersByUser\":10,\n\t\"minRolesByUser\":1,\n\t\"maxRolesByUser\":10,\n\t\"minPrivilegeByRole\":1,\n\t\"maxPrivilegeByRole\":10\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DB seed / 10 000",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userNumber\":10000,\n\t\"roleNumber\":25,\n\t\"privilegeNumber\":15,\n\t\"minPrintersByUser\":1,\n\t\"maxPrintersByUser\":10,\n\t\"minRolesByUser\":1,\n\t\"maxRolesByUser\":10,\n\t\"minPrivilegeByRole\":1,\n\t\"maxPrivilegeByRole\":10\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DB seed / 100 000",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userNumber\":100000,\n\t\"roleNumber\":25,\n\t\"privilegeNumber\":15,\n\t\"minPrintersByUser\":1,\n\t\"maxPrintersByUser\":5,\n\t\"minRolesByUser\":1,\n\t\"maxRolesByUser\":5,\n\t\"minPrivilegeByRole\":1,\n\t\"maxPrivilegeByRole\":5\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DB seed / 1 000 000",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userNumber\":1000000,\n\t\"roleNumber\":25,\n\t\"privilegeNumber\":15,\n\t\"minPrintersByUser\":1,\n\t\"maxPrintersByUser\":5,\n\t\"minRolesByUser\":1,\n\t\"maxRolesByUser\":5,\n\t\"minPrivilegeByRole\":1,\n\t\"maxPrivilegeByRole\":5\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }

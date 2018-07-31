@@ -8,16 +8,16 @@ spring:
 #      username:
 #      password:
   datasource:
-    url: jdbc:mysql://rancherhostqa2.wanari.net:5010/lakitest?autoReconnect=true&useSSL=false
-    username: lakitest
+    url: jdbc:mysql://rancherhostqa2.wanari.net:5010/test_0?autoReconnect=true&useSSL=false
+    username: root
     password: lakitest
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
-    properties:
-      hibernate:
-# if you want to seed the db with these files, uncomment these lines.
-#        hbm2ddl:
-#          import_files: import_for_h2.sql
-        format_sql: true
+      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+## if you want to seed the db with these files, uncomment these lines.
+##        hbm2ddl:
+##          import_files: import_for_h2.sql
+#        format_sql: true

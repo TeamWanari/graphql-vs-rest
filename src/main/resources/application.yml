@@ -2,11 +2,11 @@ spring:
   h2:
     console:
       enabled: true
-# If you want to use h2 db, uncomment these lines and the proper dependency in pom.xml file.
-#   datasource:
-#      url: jdbc:h2:mem:graphql;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-#      username:
-#      password:
+# If you want to use h2 db, uncomment these lines.
+#  datasource:
+#    url: jdbc:h2:mem:graphql;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    username:
+#    password:
   datasource:
     url: jdbc:mysql://rancherhostqa2.wanari.net:5010/test_0?autoReconnect=true&useSSL=false
     username: root
@@ -17,7 +17,7 @@ spring:
 #    show-sql: true
 #    properties:
 #      hibernate:
-## if you want to seed the db with these files, uncomment these lines.
-##        hbm2ddl:
-##          import_files: import_for_h2.sql
+# If you want to seed the db with these files, uncomment these lines.
+#        hbm2ddl:
+#          import_files: import_for_h2.sql
 #        format_sql: true

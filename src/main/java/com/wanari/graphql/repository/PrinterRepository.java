@@ -1,6 +1,8 @@
 package com.wanari.graphql.repository;
 
+import com.wanari.graphql.controller.dto.RestPrinterDto;
 import com.wanari.graphql.domain.Printer;
+import com.wanari.graphql.filter.GenericFilterRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PrinterRepository extends JpaRepository<Printer, Long> {
+public interface PrinterRepository extends JpaRepository<Printer, Long>, GenericFilterRepository<RestPrinterDto, Printer> {
 
     @Query("SELECT DISTINCT printer FROM Printer printer" +
         " INNER JOIN FETCH printer.owner ")

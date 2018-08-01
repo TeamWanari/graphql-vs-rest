@@ -29,13 +29,27 @@ public class GenericParameterBuilder {
     }
 
     public GenericParameterBuilder page(Object page) {
-        this.page = (Integer) page;
-        return this;
+        if(page instanceof Integer) {
+            this.page = (Integer) page;
+            return this;
+        } else if(page instanceof String) {
+            this.page = Integer.valueOf((String) page);
+            return this;
+        } else {
+            throw new UnsupportedOperationException("Cannot make Integer out of " + page.getClass());
+        }
     }
 
     public GenericParameterBuilder pageSize(Object pageSize) {
-        this.pageSize = (Integer) pageSize;
-        return this;
+        if(pageSize instanceof Integer) {
+            this.pageSize = (Integer) pageSize;
+            return this;
+        } else if(pageSize instanceof String) {
+            this.pageSize = Integer.valueOf((String) pageSize);
+            return this;
+        } else {
+            throw new UnsupportedOperationException("Cannot make Integer out of " + pageSize.getClass());
+        }
     }
 
     public GenericParameterBuilder withFields(List<String> fields) {

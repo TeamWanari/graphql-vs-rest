@@ -50,9 +50,9 @@ public class Query implements GraphQLQueryResolver {
         if(id != null && ownerId != null) {
             return GraphqlPrinter.from(printerRepository.findByIdAndOwnerId(id, ownerId));
         } else if(id != null) {
-            return GraphqlPrinter.from(printerRepository.findByOwnerId(id));
+            return Collections.singletonList(GraphqlPrinter.from(printerRepository.findOne(id)));
         } else if(ownerId != null) {
-            return Collections.singletonList(GraphqlPrinter.from(printerRepository.findOne(ownerId)));
+            return GraphqlPrinter.from(printerRepository.findByOwnerId(ownerId));
         } else {
             return GraphqlPrinter.from(printerRepository.findAll());
         }

@@ -2,6 +2,7 @@ package com.wanari.graphql.repository;
 
 import com.wanari.graphql.domain.Printer;
 import com.wanari.graphql.domain.Printer_;
+import com.wanari.graphql.domain.User_;
 import com.wanari.graphql.filter.JoinTablesData;
 import com.wanari.graphql.filter.constants.PrinterConstants;
 import org.springframework.stereotype.Repository;
@@ -32,6 +33,10 @@ public class GraphqlPrinterRepositoryImpl implements GraphqlPrinterRepository {
 
         if(filters.containsKey(PrinterConstants.FieldName.ID)) {
             predicates.add(cb.equal(printer.get(Printer_.id), filters.get(PrinterConstants.FieldName.ID)));
+        }
+
+        if(filters.containsKey(PrinterConstants.FieldName.OWNER_ID)) {
+            predicates.add(cb.equal(printer.get(Printer_.owner).get(User_.id), filters.get(PrinterConstants.FieldName.OWNER_ID)));
         }
 
         return combinePredicates(predicates, cb::and);

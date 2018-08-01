@@ -10,6 +10,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public interface GenericFilterRepository<Dto, Entity> {
@@ -17,6 +18,19 @@ public interface GenericFilterRepository<Dto, Entity> {
     EntityManager em();
 
     default List<Dto> find(ValidGenericParameters parameter, Class<Entity> clazz, BiFunction<Entity, List<String>, Dto> mapper) {
+        return getEntities(parameter, clazz).stream()
+            .map(p -> mapper.apply(p, parameter.fields))
+            .collect(Collectors.toList());
+    }
+
+
+    default List<Dto> findForGraphql(ValidGenericParameters parameter, Class<Entity> clazz, Function<Entity, Dto> mapper) {
+        return getEntities(parameter, clazz).stream()
+            .map(mapper)
+            .collect(Collectors.toList());
+    }
+
+    default List<Entity> getEntities(ValidGenericParameters parameter, Class<Entity> clazz) {
         CriteriaBuilder cb = em().getCriteriaBuilder();
         CriteriaQuery<Entity> query = cb.createQuery(clazz);
 
@@ -40,8 +54,7 @@ public interface GenericFilterRepository<Dto, Entity> {
         } else {
             entities = typedQuery.getResultList();
         }
-
-        return entities.stream().map(p -> mapper.apply(p, parameter.fields)).collect(Collectors.toList());
+        return entities;
     }
 
     default TypedQuery<Entity> createTypedQuery(CriteriaQuery<Entity> query, Root<Entity> entity, Order order, Predicate where) {

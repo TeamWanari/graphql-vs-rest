@@ -1,38 +1,12 @@
 {
 	"info": {
-		"_postman_id": "8600d8ed-4240-4b67-a019-66269e410b1b",
+		"_postman_id": "9ce62a3a-ac6f-4744-8bb0-ac87e2b90db2",
 		"name": "GraphQL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GraphQL / Get printers",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"query\":\"{printers(id:2) {id name owner{id login printers{id} roles{key privileges{key}}}}}\"\r\n}"
-				},
-				"url": {
-					"raw": "localhost:8080/graphql",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"graphql"
-					]
-				}
-			},
-			"response": []
-		},
-		{
+			"_postman_id": "02a41670-6863-41cc-b9d7-0dbe0cbc3615",
 			"name": "GraphQL / Get users",
 			"request": {
 				"method": "POST",
@@ -60,11 +34,99 @@
 			"response": []
 		},
 		{
+			"_postman_id": "4e58fb9b-aa55-432a-985c-a1e68413d17c",
+			"name": "GraphQL / Get users filtered",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\":\"{usersFiltered(sortBy: \\\"login\\\", sortOrder: \\\"desc\\\", page: 0, pageSize: 1) {id login printers{id name serialNumber owner{id}} roles {key privileges{ key }}}}\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d2ca0fdf-6ca3-4363-ab89-af511c01fa78",
+			"name": "GraphQL / Get printers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\":\"{printers(id:2) {id name owner{id login printers{id} roles{key privileges{key}}}}}\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7ee8545b-e7cb-4742-b582-3276c295f1fb",
+			"name": "GraphQL / Get printers filtered",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\":\"{printersFiltered(sortBy: \\\"id\\\", sortOrder: \\\"asc\\\", page: 0, pageSize: 4) {id name owner{id login printers{id} roles{key privileges{key}}}}}\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1d7e6daa-dc83-4bde-abd9-ead23239e864",
 			"name": "REST / Get users",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/user",
 					"host": [
@@ -79,91 +141,15 @@
 			"response": []
 		},
 		{
-			"name": "REST / Get users by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:8080/user/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"user",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "REST / Get printers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:8080/printer",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"printer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "REST / Get printers by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:8080/printer/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"printer",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "REST / Get printers by owner id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:8080/printer/owner/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"printer",
-						"owner",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
+			"_postman_id": "8309e62a-1b58-48d5-8db3-b6c45e8c7912",
 			"name": "REST / Get users joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/user/joined",
 					"host": [
@@ -179,11 +165,39 @@
 			"response": []
 		},
 		{
+			"_postman_id": "06410efe-00c9-4b6b-93f6-20a00a029ebf",
+			"name": "REST / Get users by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "df59efa2-19e1-4d42-bfc2-1acd6f9648f6",
 			"name": "REST / Get users by id joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/user/joined/1",
 					"host": [
@@ -200,11 +214,38 @@
 			"response": []
 		},
 		{
+			"_postman_id": "72ab969a-9f13-46ab-8761-21fefdff0af8",
+			"name": "REST / Get printers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/printer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1e61c660-64fa-4794-86c2-2e897f695a90",
 			"name": "REST / Get printers joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/printer/joined",
 					"host": [
@@ -220,11 +261,39 @@
 			"response": []
 		},
 		{
+			"_postman_id": "4724607a-eafc-45cc-a0d6-7a214349f1f1",
+			"name": "REST / Get printers by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/printer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "4cc2f27b-a9c3-402d-8fd2-aa9617f4d40d",
 			"name": "REST / Get printers by id joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/printer/joined/1",
 					"host": [
@@ -241,11 +310,40 @@
 			"response": []
 		},
 		{
+			"_postman_id": "654576d0-5460-4f53-b83d-aec11c1ff577",
+			"name": "REST / Get printers by owner id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/printer/owner/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"printer",
+						"owner",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0566b85b-4b2b-44bd-bbcc-d0dab8573f54",
 			"name": "REST / Get printers by owner id joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/printer/joined/owner/1",
 					"host": [
@@ -263,11 +361,15 @@
 			"response": []
 		},
 		{
+			"_postman_id": "55e05423-2e4d-4fad-87d0-6f73b5429dc1",
 			"name": "Custom Filter / Get users",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/user/filtered?fields=details",
 					"host": [
@@ -289,11 +391,15 @@
 			"response": []
 		},
 		{
+			"_postman_id": "41b85ebd-0392-43c5-8521-68ecb033237e",
 			"name": "Custom Filter / Get users joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/user/filtered/joined?fields=details",
 					"host": [
@@ -316,11 +422,15 @@
 			"response": []
 		},
 		{
+			"_postman_id": "3454db4a-0314-4902-a2fd-addea255d0ff",
 			"name": "Custom Filter / Get printers",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/printer/filtered?fields=details&ownerId=2",
 					"host": [
@@ -346,11 +456,15 @@
 			"response": []
 		},
 		{
+			"_postman_id": "85a5b8e9-9480-4f79-bd78-40742ed4e3bd",
 			"name": "Custom Filter / Get printers joined",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/printer/filtered/joined?fields=details&ownerId=2",
 					"host": [
@@ -377,6 +491,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "c131f76c-0220-4b2c-a5bf-fe73bafd8618",
 			"name": "DB seed / 100",
 			"request": {
 				"method": "POST",
@@ -404,6 +519,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "0b80fe8c-92f8-42c4-94b0-9d5a1cd34c92",
 			"name": "DB seed / 1 000",
 			"request": {
 				"method": "POST",
@@ -431,6 +547,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "9312b934-2e7b-4a40-a65f-1fff622f746a",
 			"name": "DB seed / 10 000",
 			"request": {
 				"method": "POST",
@@ -458,6 +575,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "b52e2944-feba-4950-b92f-48383de6df2a",
 			"name": "DB seed / 100 000",
 			"request": {
 				"method": "POST",
@@ -485,6 +603,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "87a724d8-1f34-4357-8176-1e49ab675560",
 			"name": "DB seed / 1 000 000",
 			"request": {
 				"method": "POST",

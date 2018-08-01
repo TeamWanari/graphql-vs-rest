@@ -3,8 +3,10 @@ schema {
 }
 
 type Query {
-    printers(id: Int, ownerId: Int): [Printer]!
     users(id: Int): [User]!
+    printers(id: Int, ownerId: Int): [Printer]!
+    usersFiltered(id: Int, sortBy: String, sortOrder: String, page: Int, pageSize: Int): [User]!
+    printersFiltered(id: Int, ownerId: Int, sortBy: String, sortOrder: String, page: Int, pageSize: Int): [Printer]!
 }
 
 type Printer {

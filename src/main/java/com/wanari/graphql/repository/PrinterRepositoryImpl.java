@@ -4,9 +4,9 @@ import com.wanari.graphql.controller.dto.RestPrinterDto;
 import com.wanari.graphql.domain.Printer;
 import com.wanari.graphql.domain.Printer_;
 import com.wanari.graphql.domain.User_;
-import com.wanari.graphql.filter.GenericFilterRepository;
-import com.wanari.graphql.filter.JoinTablesData;
-import com.wanari.graphql.filter.constants.PrinterConstants;
+import com.wanari.generic_filter.GenericFilterRepository;
+import com.wanari.generic_filter.JoinTablesData;
+import com.wanari.graphql.domain.constants.PrinterConstants;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

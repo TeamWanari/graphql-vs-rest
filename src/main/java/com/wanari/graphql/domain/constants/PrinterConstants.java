@@ -1,4 +1,4 @@
-package com.wanari.graphql.filter.constants;
+package com.wanari.graphql.domain.constants;
 
 import java.util.ArrayList;
 import java.util.List;

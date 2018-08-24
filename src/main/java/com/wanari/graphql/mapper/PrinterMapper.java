@@ -2,9 +2,9 @@ package com.wanari.graphql.mapper;
 
 import com.wanari.graphql.controller.dto.RestPrinterDto;
 import com.wanari.graphql.domain.Printer;
-import com.wanari.graphql.filter.GenericFilterUtil;
-import com.wanari.graphql.filter.GenericMapper;
-import com.wanari.graphql.filter.constants.PrinterConstants;
+import com.wanari.generic_filter.GenericFilterUtil;
+import com.wanari.generic_filter.GenericMapper;
+import com.wanari.graphql.domain.constants.PrinterConstants;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -2,7 +2,7 @@ package com.wanari.graphql.repository;
 
 import com.wanari.graphql.controller.dto.RestPrinterDto;
 import com.wanari.graphql.domain.Printer;
-import com.wanari.graphql.filter.GenericFilterRepository;
+import com.wanari.generic_filter.GenericFilterRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

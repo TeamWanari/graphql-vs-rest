@@ -2,11 +2,11 @@ package com.wanari.graphql.mapper;
 
 import com.wanari.graphql.controller.dto.RestUserDto;
 import com.wanari.graphql.domain.User;
-import com.wanari.graphql.filter.GenericFilterUtil;
-import com.wanari.graphql.filter.GenericMapper;
-import com.wanari.graphql.filter.constants.PrinterConstants;
-import com.wanari.graphql.filter.constants.RoleConstants;
-import com.wanari.graphql.filter.constants.UserConstants;
+import com.wanari.graphql.domain.constants.PrinterConstants;
+import com.wanari.graphql.domain.constants.RoleConstants;
+import com.wanari.graphql.domain.constants.UserConstants;
+import com.wanari.utils.spring.genericfilter.GenericFilterUtil;
+import com.wanari.utils.spring.genericfilter.GenericMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

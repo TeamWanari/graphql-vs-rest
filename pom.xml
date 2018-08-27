@@ -18,6 +18,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -27,6 +34,7 @@
         <graphql-spring-boot-starter-version>3.6.0</graphql-spring-boot-starter-version>
         <graphql-java-tools-version>3.2.0</graphql-java-tools-version>
         <hibernate.version>5.3.3.Final</hibernate.version>
+        <generic-filter.version>master-SNAPSHOT</generic-filter.version>
     </properties>
 
     <dependencies>
@@ -71,6 +79,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.TeamWanari</groupId>
+            <artifactId>generic-filter</artifactId>
+            <version>${generic-filter.version}</version>
         </dependency>
         <dependency>
             <groupId>io.vavr</groupId>

@@ -1,13 +1,14 @@
 package com.wanari.graphql.controller;
 
 import com.wanari.graphql.controller.dto.RestUserDto;
-import com.wanari.graphql.filter.GenericFilter;
-import com.wanari.graphql.filter.GenericParameterBuilder;
-import com.wanari.graphql.filter.GenericParameters;
-import com.wanari.graphql.filter.constants.GeneralFilterConstants;
-import com.wanari.graphql.filter.constants.UserConstants;
+
+import com.wanari.graphql.domain.constants.UserConstants;
 import com.wanari.graphql.repository.UserRepository;
 import com.wanari.graphql.service.UserService;
+import com.wanari.utils.spring.genericfilter.GenericFilter;
+import com.wanari.utils.spring.genericfilter.GenericParameterBuilder;
+import com.wanari.utils.spring.genericfilter.GenericParameters;
+import com.wanari.utils.spring.genericfilter.constant.GeneralFilterConstants;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -5,12 +5,12 @@ import com.wanari.graphql.domain.Printer;
 import com.wanari.graphql.domain.Role;
 import com.wanari.graphql.domain.User;
 import com.wanari.graphql.domain.User_;
-import com.wanari.graphql.filter.GenericFilterRepository;
-import com.wanari.graphql.filter.GenericFilterUtil;
-import com.wanari.graphql.filter.JoinTablesData;
-import com.wanari.graphql.filter.constants.PrinterConstants;
-import com.wanari.graphql.filter.constants.RoleConstants;
-import com.wanari.graphql.filter.constants.UserConstants;
+import com.wanari.graphql.domain.constants.PrinterConstants;
+import com.wanari.graphql.domain.constants.RoleConstants;
+import com.wanari.graphql.domain.constants.UserConstants;
+import com.wanari.utils.spring.genericfilter.GenericFilterRepository;
+import com.wanari.utils.spring.genericfilter.GenericFilterUtil;
+import com.wanari.utils.spring.genericfilter.JoinTablesData;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

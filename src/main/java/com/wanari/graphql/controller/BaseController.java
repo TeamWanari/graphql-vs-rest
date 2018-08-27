@@ -1,6 +1,6 @@
 package com.wanari.graphql.controller;
 
-import com.wanari.graphql.service.error.ErrorDto;
+import com.wanari.utils.spring.genericfilter.error.ErrorDto;
 import org.springframework.http.ResponseEntity;
 
 public class BaseController {

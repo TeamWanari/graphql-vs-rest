@@ -2,10 +2,10 @@ package com.wanari.graphql.service;
 
 import com.wanari.graphql.controller.dto.RestPrinterDto;
 import com.wanari.graphql.domain.Printer;
-import com.wanari.graphql.filter.ValidGenericParameters;
-import com.wanari.graphql.filter.constants.PrinterConstants;
+import com.wanari.graphql.domain.constants.PrinterConstants;
 import com.wanari.graphql.mapper.PrinterMapper;
 import com.wanari.graphql.repository.PrinterRepository;
+import com.wanari.utils.spring.genericfilter.ValidGenericParameters;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

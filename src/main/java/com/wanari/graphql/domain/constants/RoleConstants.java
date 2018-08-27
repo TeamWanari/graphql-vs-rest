@@ -1,10 +1,10 @@
-package com.wanari.graphql.filter.constants;
+package com.wanari.graphql.domain.constants;
 
 import com.wanari.graphql.domain.Privilege;
 import com.wanari.graphql.domain.Role;
 import com.wanari.graphql.domain.Role_;
-import com.wanari.graphql.filter.GenericFilterUtil;
-import com.wanari.graphql.filter.JoinTableInfo;
+import com.wanari.generic_filter.GenericFilterUtil;
+import com.wanari.generic_filter.JoinTableInfo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.wanari.graphql.service;
 
 import com.wanari.graphql.domain.Printer;
-import com.wanari.graphql.filter.ValidGenericParameters;
+import com.wanari.generic_filter.ValidGenericParameters;
 import com.wanari.graphql.repository.GraphqlPrinterRepository;
 import com.wanari.graphql.resolver.GraphqlPrinter;
 import org.springframework.stereotype.Service;

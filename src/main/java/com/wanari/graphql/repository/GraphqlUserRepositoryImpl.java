@@ -2,8 +2,8 @@ package com.wanari.graphql.repository;
 
 import com.wanari.graphql.domain.User;
 import com.wanari.graphql.domain.User_;
-import com.wanari.graphql.filter.JoinTablesData;
-import com.wanari.graphql.filter.constants.UserConstants;
+import com.wanari.generic_filter.JoinTablesData;
+import com.wanari.graphql.domain.constants.UserConstants;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

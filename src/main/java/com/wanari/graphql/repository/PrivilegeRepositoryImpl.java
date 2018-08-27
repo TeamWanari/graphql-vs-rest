@@ -3,9 +3,9 @@ package com.wanari.graphql.repository;
 import com.wanari.graphql.controller.dto.RestPrivilegeDto;
 import com.wanari.graphql.domain.Privilege;
 import com.wanari.graphql.domain.Privilege_;
-import com.wanari.graphql.filter.GenericFilterRepository;
-import com.wanari.graphql.filter.JoinTablesData;
-import com.wanari.graphql.filter.constants.PrivilegeConstants;
+import com.wanari.generic_filter.GenericFilterRepository;
+import com.wanari.generic_filter.JoinTablesData;
+import com.wanari.graphql.domain.constants.PrivilegeConstants;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

@@ -1,19 +1,19 @@
 package com.wanari.graphql.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.wanari.graphql.filter.GenericFilter;
-import com.wanari.graphql.filter.GenericParameterBuilder;
-import com.wanari.graphql.filter.GenericParameters;
-import com.wanari.graphql.filter.constants.GeneralFilterConstants;
-import com.wanari.graphql.filter.constants.PrinterConstants;
-import com.wanari.graphql.filter.constants.UserConstants;
+import com.wanari.generic_filter.GenericFilter;
+import com.wanari.generic_filter.GenericParameterBuilder;
+import com.wanari.generic_filter.GenericParameters;
+import com.wanari.generic_filter.constants.GeneralFilterConstants;
+import com.wanari.graphql.domain.constants.PrinterConstants;
+import com.wanari.graphql.domain.constants.UserConstants;
 import com.wanari.graphql.repository.PrinterRepository;
 import com.wanari.graphql.repository.UserRepository;
 import com.wanari.graphql.service.GraphqlPrinterService;
 import com.wanari.graphql.service.GraphqlUserService;
-import com.wanari.graphql.service.error.ErrorDescriptionDto;
-import com.wanari.graphql.service.error.ErrorDescriptionParamDto;
-import com.wanari.graphql.service.error.ErrorDto;
+import com.wanari.common.error.ErrorDescriptionDto;
+import com.wanari.common.error.ErrorDescriptionParamDto;
+import com.wanari.common.error.ErrorDto;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;

@@ -2,7 +2,7 @@ package com.wanari.graphql.mapper;
 
 import com.wanari.graphql.controller.dto.RestPrivilegeDto;
 import com.wanari.graphql.domain.Privilege;
-import com.wanari.graphql.filter.GenericMapper;
+import com.wanari.generic_filter.GenericMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
